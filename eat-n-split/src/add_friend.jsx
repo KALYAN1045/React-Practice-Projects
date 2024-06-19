@@ -1,4 +1,4 @@
-export default function Addfriend() {
+export default function Addfriend({ onAddFriend }) {
   return (
     <form className="m-3 border border-black-500 custom-inner-shadow bg-color-light flex flex-col h-[50%] w-[100%]">
       <h2 className="text-center font-bold m-2 bg-color-dark p-1 rounded-md shadow-lg">
