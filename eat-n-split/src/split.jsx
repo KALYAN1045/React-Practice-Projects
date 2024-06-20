@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Split({ selectedFriend }) {
+export default function Split({ selectedFriend, onSplitBill }) {
   // COntrolled Elements
   const [bill, setBill] = useState("");
   const [expense, setExpense] = useState("");
@@ -16,8 +16,17 @@ export default function Split({ selectedFriend }) {
   }
   const friendName = capitalizeFirstLetter(selectedFriend.name);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!bill || !expense) return;
+    onSplitBill(paidBy === "user" ? FriendExpense : -expense);
+  }
+
   return (
-    <form className="border border-black-500 custom-inner-shadow bg-color-light flex flex-col h-[75%] w-[100%]">
+    <form
+      className="border border-black-500 custom-inner-shadow bg-color-light flex flex-col h-[75%] w-[100%]"
+      onSubmit={handleSubmit}
+    >
       <h2 className="text-center font-bold m-2 bg-color-dark p-1 rounded-md shadow-lg">
         Split expense with {friendName}
       </h2>
@@ -50,7 +59,11 @@ export default function Split({ selectedFriend }) {
             id="yourExpense"
             name="yourExpense"
             value={expense}
-            onChange={(e) => setExpense(Number(e.target.value))}
+            onChange={(e) =>
+              setExpense(
+                Number(e.target.value) > bill ? expense : Number(e.target.value)
+              )
+            }
             className="border rounded-md p-1 w-24 text-center"
           />
         </div>

@@ -41,6 +41,17 @@ export default function App() {
     );
   }
 
+  function handleSplitBill(value) {
+    setFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    );
+    setSelectedFriend(null);
+  }
+
   return (
     <div className="back flex items-center justify-center min-h-screen bg-gray-200">
       <div className="backdrop-blur-sm bg-color-lightest w-[90%] md:w-[90%] lg:w-[80%] xl:w-[70%] h-[500px] p-5 rounded-lg shadow-xl flex border-b-4 border-color-db">
@@ -100,7 +111,10 @@ export default function App() {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
               >
-                <Split selectedFriend={selectedFriend} />
+                <Split
+                  selectedFriend={selectedFriend}
+                  onSplitBill={handleSplitBill}
+                />
               </motion.div>
             )}
           </AnimatePresence>
