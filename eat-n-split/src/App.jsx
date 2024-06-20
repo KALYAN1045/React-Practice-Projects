@@ -7,13 +7,38 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function App() {
   const [friends, setFriends] = useState([]);
   const [AddfriendWindow, setAddfriendWindow] = useState(false);
+  const [selectedFriend, setSelectedFriend] = useState(null);
 
   function handleAddFriendWindow() {
+    if (selectedFriend) {
+      setSelectedFriend(null);
+      setTimeout(() => {
+        setAddfriendWindow(true);
+      }, 500);
+      return;
+    }
     setAddfriendWindow((show) => !show);
   }
 
   function handleAddNewFriend(friend) {
     setFriends((friends) => [...friends, friend]);
+    setAddfriendWindow(false);
+  }
+
+  function handleSelection(friend) {
+    if (AddfriendWindow) {
+      setAddfriendWindow(false);
+
+      setTimeout(() => {
+        setSelectedFriend((currentSelected) =>
+          currentSelected && currentSelected.id === friend.id ? null : friend
+        );
+      }, 500);
+      return;
+    }
+    setSelectedFriend((currentSelected) =>
+      currentSelected && currentSelected.id === friend.id ? null : friend
+    );
   }
 
   return (
@@ -34,9 +59,9 @@ export default function App() {
                   {friends.map((item, index) => (
                     <Friend
                       key={item.id}
-                      name={item.name}
-                      image={item.image}
-                      balance={item.balance}
+                      friend={item}
+                      onSelection={handleSelection}
+                      selectedFriend={selectedFriend}
                     />
                   ))}
                 </div>
@@ -61,7 +86,21 @@ export default function App() {
                 animate={{ scale: 1 }}
                 exit={{ scale: 0 }}
               >
-                <Addfriend onAddFriend={handleAddNewFriend} />
+                <Addfriend
+                  onAddFriend={handleAddNewFriend}
+                  selectedFriend={selectedFriend}
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {selectedFriend && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                exit={{ scale: 0 }}
+              >
+                <Split selectedFriend={selectedFriend} />
               </motion.div>
             )}
           </AnimatePresence>

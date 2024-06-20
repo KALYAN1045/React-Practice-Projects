@@ -1,8 +1,25 @@
-export default function Split({ name }) {
+import { useState } from "react";
+
+export default function Split({ selectedFriend }) {
+  // COntrolled Elements
+  const [bill, setBill] = useState("");
+  const [expense, setExpense] = useState("");
+  const FriendExpense = bill ? bill - expense : "";
+
+  const [paidBy, setPaidBy] = useState("user");
+
+  if (!selectedFriend) return null;
+
+  // Capitalize the friend's name
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  const friendName = capitalizeFirstLetter(selectedFriend.name);
+
   return (
     <form className="border border-black-500 custom-inner-shadow bg-color-light flex flex-col h-[75%] w-[100%]">
       <h2 className="text-center font-bold m-2 bg-color-dark p-1 rounded-md shadow-lg">
-        Split expense with {name}
+        Split expense with {friendName}
       </h2>
       <div className="flex flex-col justify-center m-5 font-bold ">
         <div className="flex items-center mb-2 w-full">
@@ -16,6 +33,8 @@ export default function Split({ name }) {
             type="number"
             id="billValue"
             name="billValue"
+            value={bill}
+            onChange={(e) => setBill(Number(e.target.value))}
             className="border rounded-md p-1 w-24 text-center"
           />
         </div>
@@ -30,6 +49,8 @@ export default function Split({ name }) {
             type="number"
             id="yourExpense"
             name="yourExpense"
+            value={expense}
+            onChange={(e) => setExpense(Number(e.target.value))}
             className="border rounded-md p-1 w-24 text-center"
           />
         </div>
@@ -38,14 +59,14 @@ export default function Split({ name }) {
             htmlFor="friendExpense"
             className="mr-auto min-w-[100px] text-left"
           >
-            {name}'s expense:
+            {friendName}'s expense:
           </label>
           <input
             type="number"
             id="friendExpense"
             name="friendExpense"
             className="border rounded-md p-1 w-24 text-center bg-color-medium"
-            value="100"
+            value={FriendExpense}
             readOnly
           />
         </div>
@@ -59,10 +80,12 @@ export default function Split({ name }) {
           <select
             id="payingPerson"
             name="payingPerson"
+            value={paidBy}
+            onChange={(e) => setPaidBy(e.target.value)}
             className="border rounded-md p-1 w-24 text-center"
           >
-            <option value="0">You</option>
-            <option value="1">{name}</option>
+            <option value="user">You</option>
+            <option value="friend">{friendName}</option>
           </select>
         </div>
       </div>

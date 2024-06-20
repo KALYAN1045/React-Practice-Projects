@@ -44,3 +44,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.select_btn {
+  @apply text-sm font-bold inline-block bg-color-medium px-3 py-1 rounded-lg hover:border-b-4 hover:border-color-db transition duration-700 hover:shadow-xl;
+}
