@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# 🍽️ Eat-n-Split 🥗
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Eat-n-Split** is your go-to application for effortlessly splitting bills and managing expenses while dining out with friends or family. This intuitive app simplifies the process of dividing costs, ensuring fairness and ease during group meals.
 
-## Available Scripts
+**Key Features:**
 
-In the project directory, you can run:
+- **Split Bills:** Easily split the total bill among friends or group members. Specify each person's expenses to accurately distribute the cost, eliminating any confusion or disagreements.
+- **Track Expenses:** Keep a detailed record of individual expenses incurred during the meal. This feature allows you to monitor spending and maintain transparency within the group.
+- **Settle Debts:** Quickly settle debts among participants by calculating the amount owed or owed to each person. The app facilitates seamless transactions, making it convenient to reimburse or receive payments.
 
-### `npm start`
+Eat-n-Split transforms the dining experience by promoting financial fairness and efficiency during group outings. Whether you're enjoying a casual dinner or celebrating a special occasion, this app ensures smooth bill management and expense tracking for everyone involved.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📸 Screenshots
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[<img src="https://i.postimg.cc/MpwDCZRD/Recording2024-06-20144739-ezgif-com-speed.gif" alt="Recording" style="width: 1000px;">](https://postimg.cc/CzvkDgcB)
 
-### `npm test`
+[![Screenshot-2024-06-20-144535.png](https://i.postimg.cc/gc7fRhhT/Screenshot-2024-06-20-144535.png)](https://postimg.cc/5jw7W6nB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[![Screenshot-2024-06-20-144603.png](https://i.postimg.cc/KjCw2XF2/Screenshot-2024-06-20-144603.png)](https://postimg.cc/BPcMTVXY)
 
-### `npm run build`
+## Try it now ! 🚀
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Visit Site](https://eat-nn-split.netlify.app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology used:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to customize and expand upon this template to suit your project's specific features and requirements!
