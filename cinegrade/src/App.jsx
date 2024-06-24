@@ -34,7 +34,7 @@ export default function App() {
     <>
       {/* <Navi movies={movies} />
       <Main movies={movies} /> */}
-      <Starrating maxRating="5" />
+      <Starrating maxRating="7" />
     </>
   );
 }
